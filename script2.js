@@ -7,11 +7,19 @@ const banner = document.getElementById("banner");
 const scoreBanner = document.getElementById("current-score");
 const p1Score = document.getElementById("player-one-score");
 const p2Score = document.getElementById("player-two-score");
+const playerOne = document.getElementById("p1");
+const playerTwo = document.getElementById("p2");
 
 let p1Turn = true;
 let currentPlayer;
 const player1 = ["Player One",0];
 const player2 = ["Player Two",0];
+
+function clickToStart(){
+banner.textContent = "Click New Game to Start"
+};
+
+clickToStart();
 
 startBtn.addEventListener("click", startGame);
 
@@ -24,6 +32,10 @@ function startGame(){
     banner.textContent = "Player One's turn to roll";
     scoreReset();
     rollBtn.disabled = false;
+    playerOne.style.backgroundColor = "#D3E3FC";
+    playerOne.style.color = "#000"
+    playerTwo.style.backgroundColor = "";
+    playerTwo.style.color = ""
 }
 
 function handleClick(){
@@ -31,6 +43,10 @@ function handleClick(){
         currentPlayer = player1;
         
     } else {
+        playerTwo.style.backgroundColor="#D3E3FC";
+        playerTwo.style.color = "#000"
+        playerOne.style.color = ""
+        playerOne.style.backgroundColor = "";
         currentPlayer = player2;
     }
    
@@ -93,24 +109,6 @@ function showRoll(roll){
     die3.src = diceImg(roll[2]);
 }
 
-function showScore(score){
-    if (p1Turn == true) {
-        if (score > 6){
-            score = score/3;
-            p1Score.textContent = "Triple" + score + "'s";
-        } else{
-        p1Score.textContent = score;    
-        }
-        
-    } else {
-        if (score > 6){
-            score = score/3;
-            p2Score.textContent = "Triple" + score + "'s";}
-            else{
-            p2Score.textContent = score;
-            }
-    }
-}
 
 function clearDice(){
     die1.src = "images/dice1.png";
@@ -127,35 +125,43 @@ if (roll[0] === 4 && roll[1] === 5 && roll[2] === 6){
     //player wins
     console.log (currentPlayer + " Automatic win!");
     banner.textContent = currentPlayer + " Automatic win!";
+    scoreBanner.textContent = currentPlayer + " Wins!"
     //end game
-    startGame();
+    
+    rollBtn.disabled = true;
     };
+
 };
 
 function check123(roll,player){
     if  (roll[0] === 1 && roll[1] === 2 && roll[2] === 3){
         //player loses
         console.log (player + " Automatic loss!");
-        banner.textContent = currentPlayer + " Automatic loss!";
+        banner.textContent = player + " Automatic loss!";
+        scoreBanner.textContent = player + " Loses!"
         //end game
-        startGame();
+        rollBtn.disabled = true;
     };
+  
 };
 
 function reroll(roll,player){
+
+    if (!(roll[0] === 4 && roll[1] === 5 && roll[2] === 6) && !(roll[0] === 1 && roll[1] === 2 && roll[2] === 3)){
     if (roll[0] !== roll[1] && roll[1] !== roll[2]){
-        console.log("Roll again "+player);
+        console.log("Roll again, "+player);
         scoreBanner.textContent = "Roll again "+ player;
        // handleClick();
     }
 }
+};
 
 function checkScore(roll,player){
     if (roll[0] === roll[1] && roll[1] === roll[2]) {
         //player scores triple
         console.log(player + " has triple " + roll[0]+"s");
         scoreBanner.textContent = player + " rolled triple " + roll[0]+"s";
-        showScore(roll[0]);
+        showScore(roll[0]*3);
         swapTurns();
         return roll[0] * 3;
        
@@ -176,6 +182,24 @@ function checkScore(roll,player){
         return roll[0];
 
     } 
+}
+
+function showScore(score){
+    if (p1Turn == true) {
+        if (score > 6){
+            p1Score.textContent = "Triple " + score/3 + "'s";
+        } else{
+        p1Score.textContent = score;    
+        }
+        
+    } else {
+        if (score > 6){
+            
+            p2Score.textContent = "Triple " + score/3 + "'s";}
+            else{
+            p2Score.textContent = score;
+            }
+    }
 }
 
 function swapTurns() {

@@ -3,7 +3,7 @@
     height: 112px;
     width: 112px;
     display: inline-block;
-    background-color:white;
+    background-color:#77A6F7;
     margin-top:50px;
     margin-left: 10px;
     font-family: Arial, Helvetica, sans-serif;
@@ -14,63 +14,131 @@
 #dice-container {
     width: 500px;
     height: 200px;
-    background-color: white;
+    background-color: #77A6F7;
     display: inline-block;
-    padding-left:50px;
-    padding-right:20px;
+    padding-left:55px;
+    padding-right:20px; 
     box-sizing: border-box;
-    border-width: 1px;
-    border-color:black;
-    border-style:solid;
-   
+ 
+    margin-top: 15px;
 }
 
 #buttons {
-    width: 485px;
+    width: 500px;
     height: 50px;
-    background-color: red;
+    background-color: #77A6F7;
     display: inline-block;
-    padding-left: 15px;
+    margin-left: 150px;
+    margin-bottom: 20px;
 }
 
 button {
-    width: 48%;
+    width: 40%;
     height: 95%;
-    margin:auto;
+    margin-left:35px;;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     border-radius: 20px;
     border-width:0px;
+    background-color:#FFF;
+    color: #000;
+}
+
+button:disabled{
+    color:#00887A;
 }
 
 button:hover:enabled {
-    color: white;
-    background-color: black;
+    color: #FFF;
+    background-color: #00887A;
 }
 
-.banner{
-    width: 425px;
-    height: 20px;
-    display:block;
-    background-color: red;
-}
-
-.scores {
-    display: inline-block;
-    padding-left: 35px;
+#banner{
+    width: 800px;
+    height: 40px;
+    background-color: #D3E3FC;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size:30px;
+    text-align: center;
+    vertical-align: middle;
 }
+
+#current-score{
+    width: 800px;
+    height: 30px;
+    background-color: #77A6F7;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:20px;
+    text-align: center;
+    
+}
+
 
 #container {
     width:800px;
     margin:auto;
-
-    padding-left:200px;
-    padding-top: 200px;
+    margin-top: 70px;
+    padding-top: 20px;
+    background-color:#77A6F7;
+    justify-content: center;
+  
 }
 
 footer {
-    background-color: #f1f1f1;
+   
     padding: 10px;
   }
+
+  h1{
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 60px;
+      margin-top: 0px;
+      margin-bottom:0px;
+      color:white;
+  }
+
+  #game-title {
+      width:100%;
+      height: 60px;
+      margin-bottom: 30px;
+  }
+
+  #dice-score {
+      display: inline-block;
+      background-color: #77A6F7;
+      width: 800px;
+  }
+
+  #player-one {
+      float:left;
+      width:150px;
+  }
+
+  #player-two {
+    float:right;
+    width:150px;
+}
+
+h2 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFFFFF;
+}
+
+
+.scores {
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    text-align: center;
+    vertical-align:middle;
+    color:#FFF;
+}
+
+#rules{
+    margin:auto;
+    width: 800px;
+}
+

@@ -2,43 +2,69 @@
 <html>
     <head>
         <link rel="stylesheet" href="style.css">
+        <title>Ceel-lo Dice Game</title>
     </head>
     <body>
+
         <div id ="container">
-            <div id = "banner">
-                <p></p>
+            <div id = "game-title">
+                <h1>Cee-lo Dice Game</h1>
+            </div>
+            <div id = "banner">              
+            </div>
+            
+        <div id="dice-score">
+            <div id="player-one" >
+                <h2 id = "p1">Player One</h2>
+                <div class = "scores" id = "player-one-score">
+                
+                </div>
             </div>
         <div id = "dice-container">
             <div class = "dice"><img id = "one" src="images/dice1.png"></div>
             <div class = "dice"><img id = "two" src="images/dice1.png"></div>
             <div class = "dice"><img id = "three" src="images/dice1.png"></div>
         </div>
-        
-        <div id = "buttons">
-            <button id = "start-btn">New Game</button>
-            <button id = "roll-btn">Roll</button>
-        </div>
-        
-        <div id = "current-score">
-        </div>
-        <div>
-            <div class = "scores">
-                <p>Player One</p>
-            </div>
-            <div class = "scores">
-                <p>Player Two</p>
-            </div>
-        </div>
-        <div>
-            <div class = "scores" id = "player-one-score">
-                
-            </div>
+        <div id="player-two" >
+            <h2 id = "p2">Player Two</h2>
             <div class = "scores" id = "player-two-score">
                 
             </div>
         </div>
+        </div>
+        <div id = "current-score">
+        </div>
+        <div id = "buttons">
+            <button id = "start-btn">New Game</button>
+            <button id = "roll-btn" disabled>Roll</button>
+        </div>
+        
+       
+      
+     
     </div>
-
+    <div id = "rules">
+        <p>RULES:</p>
+        <ul>
+            <li>A player can only score if they roll at least one pair. 
+            </li>
+            <li>
+                The score is the remaining number outside the pair. (e.g. if a 2-2-5 is rolled, the score is a 5).
+            </li>
+            <li>
+                The higher the number, the higher the score.
+            </li>
+            <li>
+                Triples will always beat a single pair score.
+            </li>
+            <li> 
+                If a player rolls a 4-5-6, it's an automatic win. 
+            </li>
+            <li>
+                If a player rolls a 1-2-3, it's an automatic loss.
+            </li>
+        </ul>
+    </div>
     </body>
     <footer>
         <script src = "script2.js" defer></script>
