@@ -46,6 +46,7 @@ button {
 
 button:disabled{
     color:#00887A;
+    opacity: .5;
 }
 
 button:hover:enabled {
