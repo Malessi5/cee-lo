@@ -3,7 +3,7 @@
     height: 112px;
     width: 112px;
     display: inline-block;
-    background-color:#77A6F7;
+    background-color:#5CDB95;
     margin-top:50px;
     margin-left: 10px;
     font-family: Arial, Helvetica, sans-serif;
@@ -14,7 +14,7 @@
 #dice-container {
     width: 500px;
     height: 200px;
-    background-color: #77A6F7;
+    background-color: #5CDB95;
     display: inline-block;
     padding-left:55px;
     padding-right:20px; 
@@ -26,7 +26,7 @@
 #buttons {
     width: 500px;
     height: 50px;
-    background-color: #77A6F7;
+    background-color: #5CDB95;
     display: inline-block;
     margin-left: 150px;
     margin-bottom: 20px;
@@ -40,8 +40,8 @@ button {
     font-size: 20px;
     border-radius: 20px;
     border-width:0px;
-    background-color:#FFF;
-    color: #000;
+    background-color:#05386B;
+    color: #FFF;
 }
 
 button:disabled{
@@ -57,21 +57,23 @@ button:hover:enabled {
 #banner{
     width: 800px;
     height: 40px;
-    background-color: #D3E3FC;
+    background-color: #8EE4AF;
     font-family: Arial, Helvetica, sans-serif;
-    font-size:30px;
+    font-size:25px;
     text-align: center;
-    vertical-align: middle;
+    padding-top:5px;
+    border-radius: 15px;
 }
 
 #current-score{
     width: 800px;
     height: 30px;
-    background-color: #77A6F7;
+    background-color: #5CDB95;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size:20px;
     text-align: center;
+    margin-bottom:15px;
     
 }
 
@@ -81,9 +83,9 @@ button:hover:enabled {
     margin:auto;
     margin-top: 70px;
     padding-top: 20px;
-    background-color:#77A6F7;
+    background-color:#5CDB95;
     justify-content: center;
-  
+    border-radius: 15px;
 }
 
 footer {
@@ -93,11 +95,11 @@ footer {
 
   h1{
       text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       font-size: 60px;
       margin-top: 0px;
       margin-bottom:0px;
-      color:white;
+      color:#05386B;
   }
 
   #game-title {
@@ -108,24 +110,37 @@ footer {
 
   #dice-score {
       display: inline-block;
-      background-color: #77A6F7;
+      background-color: #5CDB95;
       width: 800px;
   }
 
   #player-one {
       float:left;
-      width:150px;
+      width:120px;
+      padding-left: 15px;
+      padding-right:15px;
+      margin-top:50px;
+      background-color:#8EE4Af;
+      border-radius: 15px;
   }
 
   #player-two {
     float:right;
-    width:150px;
+    width:120px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-top:50px;
+    background-color:#8EE4Af;
+    border-radius: 15px;
 }
 
 h2 {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    color: #FFFFFF;
+    color: #379683;
+    border-radius:5px;
+    font-size: 20px;
+    background-color:#8EE4Af;
 }
 
 
@@ -135,7 +150,10 @@ h2 {
     font-size: 40px;
     text-align: center;
     vertical-align:middle;
-    color:#FFF;
+    color:#379683;
+    font-weight:bold;
+    background-color:#8EE4Af;
+    height: 80px;
 }
 
 #rules{

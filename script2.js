@@ -32,10 +32,7 @@ function startGame(){
     banner.textContent = "Player One's turn to roll";
     scoreReset();
     rollBtn.disabled = false;
-    playerOne.style.backgroundColor = "#D3E3FC";
-    playerOne.style.color = "#000"
-    playerTwo.style.backgroundColor = "";
-    playerTwo.style.color = ""
+
 }
 
 function handleClick(){
@@ -43,17 +40,12 @@ function handleClick(){
         currentPlayer = player1;
         
     } else {
-        playerTwo.style.backgroundColor="#D3E3FC";
-        playerTwo.style.color = "#000"
-        playerOne.style.color = ""
-        playerOne.style.backgroundColor = "";
+
         currentPlayer = player2;
     }
    
     let roll = diceRoll();
     if (!check456(roll,currentPlayer[0]) && !check123(roll,currentPlayer[0]) ){
-   // check456(roll,currentPlayer[0]);
-    //check123(roll,currentPlayer[0]);
     reroll(roll,currentPlayer[0]);
 
     currentPlayer[1] = checkScore(roll,currentPlayer[0]); 
@@ -153,7 +145,7 @@ function reroll(roll,player){
     if (!(roll[0] === 4 && roll[1] === 5 && roll[2] === 6) && !(roll[0] === 1 && roll[1] === 2 && roll[2] === 3)){
     if (roll[0] !== roll[1] && roll[1] !== roll[2]){
         console.log("Roll again, "+player);
-        scoreBanner.textContent = "Roll again "+ player;
+        scoreBanner.textContent = player + ", Roll again";
        
     }
 }
@@ -190,16 +182,43 @@ function checkScore(roll,player){
 function showScore(score,triple){
     if (p1Turn == true) {
         if (triple == true){
-            p1Score.textContent = "Triple " + score + "'s";
+           // p1Score.textContent = "Triple " + score + "'s";
+           for (let i=0; i<3; i++){
+            let pic = document.createElement("img");
+            pic.src=diceImg(score);
+            pic.setAttribute("height","25");
+            pic.setAttribute("width","25");
+            p1Score.appendChild(pic);
+           };
+         
+
         } else{
-        p1Score.textContent = score;    
+       // p1Score.textContent = score;    
+        var pic = document.createElement("img");
+        pic.src=diceImg(score);
+        pic.setAttribute("height","50");
+        pic.setAttribute("width","50");
+        p1Score.appendChild(pic);
         }
         
     } else {
         if (triple == true){
-            p2Score.textContent = "Triple " + score + "'s";}
+           // p2Score.textContent = "Triple " + score + "'s";
+           for (let i=0; i<3; i++){
+            let pic = document.createElement("img");
+            pic.src=diceImg(score);
+            pic.setAttribute("height","25");
+            pic.setAttribute("width","25");
+            p2Score.appendChild(pic);
+           };
+        }
             else{
-            p2Score.textContent = score;
+          //  p2Score.textContent = score;
+            var pic = document.createElement("img");
+            pic.src=diceImg(score);
+            pic.setAttribute("height","50");
+            pic.setAttribute("width","50");
+            p2Score.appendChild(pic);
             }
     }
 }
