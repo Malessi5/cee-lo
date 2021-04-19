@@ -51,8 +51,9 @@ function handleClick(){
     }
    
     let roll = diceRoll();
-    check456(roll,currentPlayer[0]);
-    check123(roll,currentPlayer[0]);
+    if (!check456(roll,currentPlayer[0]) && !check123(roll,currentPlayer[0]) ){
+   // check456(roll,currentPlayer[0]);
+    //check123(roll,currentPlayer[0]);
     reroll(roll,currentPlayer[0]);
 
     currentPlayer[1] = checkScore(roll,currentPlayer[0]); 
@@ -61,7 +62,7 @@ function handleClick(){
     if (p1Turn == true){
         checkWinner(player1[1],player2[1]);
     } 
-
+    }
 }
 
 function scoreReset(){
@@ -129,6 +130,7 @@ if (roll[0] === 4 && roll[1] === 5 && roll[2] === 6){
     //end game
     
     rollBtn.disabled = true;
+    return true;
     };
 
 };
@@ -141,6 +143,7 @@ function check123(roll,player){
         scoreBanner.textContent = player + " Loses!"
         //end game
         rollBtn.disabled = true;
+        return true;
     };
   
 };
@@ -151,7 +154,7 @@ function reroll(roll,player){
     if (roll[0] !== roll[1] && roll[1] !== roll[2]){
         console.log("Roll again, "+player);
         scoreBanner.textContent = "Roll again "+ player;
-       // handleClick();
+       
     }
 }
 };
@@ -161,7 +164,7 @@ function checkScore(roll,player){
         //player scores triple
         console.log(player + " has triple " + roll[0]+"s");
         scoreBanner.textContent = player + " rolled triple " + roll[0]+"s";
-        showScore(roll[0]*3);
+        showScore(roll[0],true);
         swapTurns();
         return roll[0] * 3;
        
@@ -184,18 +187,17 @@ function checkScore(roll,player){
     } 
 }
 
-function showScore(score){
+function showScore(score,triple){
     if (p1Turn == true) {
-        if (score > 6){
-            p1Score.textContent = "Triple " + score/3 + "'s";
+        if (triple == true){
+            p1Score.textContent = "Triple " + score + "'s";
         } else{
         p1Score.textContent = score;    
         }
         
     } else {
-        if (score > 6){
-            
-            p2Score.textContent = "Triple " + score/3 + "'s";}
+        if (triple == true){
+            p2Score.textContent = "Triple " + score + "'s";}
             else{
             p2Score.textContent = score;
             }
