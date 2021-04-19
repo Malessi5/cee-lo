@@ -122,6 +122,7 @@ if (roll[0] === 4 && roll[1] === 5 && roll[2] === 6){
     //end game
     
     rollBtn.disabled = true;
+    
     return true;
     };
 
