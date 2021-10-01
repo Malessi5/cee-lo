@@ -1,168 +1,169 @@
 .dice {
- 
-    height: 112px;
-    width: 112px;
-    display: inline-block;
-    background-color:#5CDB95;
-    margin-top:50px;
-    margin-left: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 80px;
-
+  height: 111px;
+  width: 111px;
+  display: inline-block;
+  background-color: #5cdb95;
+  margin-top: 50px;
+  margin-left: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 80px;
 }
 
 #dice-container {
-    width: 500px;
-    height: 200px;
-    background-color: #5CDB95;
-    display: inline-block;
-    padding-left:55px;
-    padding-right:20px; 
-    box-sizing: border-box;
- 
-    margin-top: 15px;
+  width: 500px;
+  height: 200px;
+  background-color: #5cdb95;
+  display: inline-block;
+  padding-left: 55px;
+  padding-right: 20px;
+  box-sizing: border-box;
+
+  margin-top: 15px;
 }
 
 #buttons {
-    width: 500px;
-    height: 50px;
-    background-color: #5CDB95;
-    display: inline-block;
-    margin-left: 150px;
-    margin-bottom: 20px;
+  width: 500px;
+  height: 50px;
+  background-color: #5cdb95;
+  display: inline-block;
+  margin-left: 150px;
+  margin-bottom: 20px;
 }
 
 button {
-    width: 40%;
-    height: 95%;
-    margin-left:35px;;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    border-radius: 20px;
-    border-width:0px;
-    background-color:#05386B;
-    color: #FFF;
+  width: 40%;
+  height: 95%;
+  margin-left: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  border-radius: 20px;
+  border-width: 0px;
+  background-color: #05386b;
+  color: #fff;
 }
 
-button:disabled{
-    color:#00887A;
-    opacity: .5;
+button:disabled {
+  color: #00887a;
+  opacity: 0.5;
 }
 
 button:hover:enabled {
-    color: #FFF;
-    background-color: #00887A;
+  color: #fff;
+  background-color: #00887a;
 }
 
-#banner{
-    width: 800px;
-    height: 40px;
-    background-color: #8EE4AF;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size:25px;
-    text-align: center;
-    padding-top:10px;
-    border-radius: 15px;
-    color: #379683;
-    font-weight: bold;
+#banner {
+  width: 800px;
+  height: 40px;
+  background-color: #8ee4af;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  text-align: center;
+  padding-top: 10px;
+  border-radius: 15px;
+  color: #379683;
+  font-weight: bold;
 }
 
-#current-score{
-    width: 800px;
-    height: 30px;
-    background-color: #5CDB95;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size:20px;
-    text-align: center;
-    margin-bottom:15px;
-    
+#current-score {
+  width: 800px;
+  height: 30px;
+  background-color: #5cdb95;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 15px;
 }
-
 
 #container {
-    width:800px;
-    margin:auto;
-    margin-top: 70px;
-    padding-top: 20px;
-    background-color:#5CDB95;
-    justify-content: center;
-    border-radius: 15px;
+  width: 800px;
+  margin: auto;
+  margin-top: 70px;
+  padding-top: 20px;
+  background-color: #5cdb95;
+  justify-content: center;
+  border-radius: 15px;
 }
 
 footer {
-   
-    padding: 10px;
-  }
+  padding: 10px;
+}
 
-  h1{
-      text-align: center;
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-      font-size: 60px;
-      margin-top: 0px;
-      margin-bottom:0px;
-      color:#05386B;
-  }
+h1 {
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 60px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #05386b;
+}
 
-  #game-title {
-      width:100%;
-      height: 60px;
-      margin-bottom: 30px;
-  }
+#game-title {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 30px;
+}
 
-  #dice-score {
-      display: inline-block;
-      background-color: #5CDB95;
-      width: 800px;
-  }
+#dice-score {
+  display: inline-block;
+  background-color: #5cdb95;
+  width: 800px;
+}
 
-  #player-one {
-      float:left;
-      width:120px;
-      padding-left: 15px;
-      padding-right:15px;
-      margin-top:50px;
-      background-color:#8EE4Af;
-      border-radius: 15px;
-  }
+#player-one {
+  float: left;
+  width: 120px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 50px;
+  background-color: #8ee4af;
+  border-radius: 15px;
+}
 
-  #player-two {
-    float:right;
-    width:120px;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-top:50px;
-    background-color:#8EE4Af;
-    border-radius: 15px;
+#player-two {
+  float: right;
+  width: 120px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-top: 50px;
+  background-color: #8ee4af;
+  border-radius: 15px;
 }
 
 h2 {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #379683;
-    border-radius:5px;
-    font-size: 20px;
-    background-color:#8EE4Af;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #379683;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: #8ee4af;
 }
 
+.highlightedDie {
+  box-shadow: 0px 0px 10px red;
+  border: solid red 3px;
+  background-color: red;
+  border-radius: 25px;
+}
 
 .scores {
-
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 40px;
-    text-align: center;
-    vertical-align:middle;
-    color:#379683;
-    font-weight:bold;
-    background-color:#8EE4Af;
-    height: 80px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  text-align: center;
+  vertical-align: middle;
+  color: #379683;
+  font-weight: bold;
+  background-color: #8ee4af;
+  height: 80px;
 }
 
-#rules{
-    margin:auto;
-    width: 800px;
+#rules {
+  margin: auto;
+  width: 800px;
 }
 
 body {
-    background-color:#EDF5E1;
+  background-color: #edf5e1;
 }
