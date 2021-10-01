@@ -9,3 +9,5 @@ RULES:
 4. Triples will always beat a single pair score.
 5. If a player rolls a 4-5-6, it's an automatic win.
 6. If a player rolls a 1-2-3, it's an automatic loss.
+
+deployed:  https://malessi5.github.io/cee-lo/
