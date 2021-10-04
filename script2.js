@@ -12,8 +12,12 @@ const playerTwo = document.getElementById("p2");
 
 let p1Turn = true;
 let currentPlayer;
-const player1 = ["Player One", 0];
-const player2 = ["Player Two", 0];
+
+const player1 = {name: "Player One", score: 0};
+const player2 = {name: "Player Two", score: 0};
+
+// const player1 = ["Player One", 0];
+// const player2 = ["Player Two", 0];
 
 function clickToStart() {
   banner.textContent = "Click New Game to Start";
@@ -44,14 +48,17 @@ function handleClick() {
   }
 
   let roll = diceRoll();
-  if (!check456(roll, currentPlayer[0]) && !check123(roll, currentPlayer[0])) {
-    reroll(roll, currentPlayer[0]);
+  if (
+    !check456(roll, currentPlayer.name) &&
+    !check123(roll, currentPlayer.name)
+  ) {
+    reroll(roll, currentPlayer.name);
 
-    currentPlayer[1] = checkScore(roll, currentPlayer[0]);
-    console.log(currentPlayer[1]);
-    highlightNum(currentPlayer[1]);
+    currentPlayer.score = checkScore(roll, currentPlayer.name);
+    console.log(currentPlayer.score);
+    highlightNum(currentPlayer.score);
     if (p1Turn == true) {
-      checkWinner(player1[1], player2[1]);
+      checkWinner(player1.score, player2.score);
     }
   }
 }
@@ -59,6 +66,11 @@ function handleClick() {
 function highlightNum(score) {
   const dice = document.querySelectorAll(".dice");
 
+  if (Array.isArray(score)) {
+    dice.forEach((die) => {
+      die.classList.add("highlightedDie");
+    });
+  }
   dice.forEach((die) => {
     let stringNumIndex = die.innerHTML.length - 7;
     let dieNum = Number(die.innerHTML[stringNumIndex]);
@@ -77,8 +89,8 @@ function removeHighlight() {
 }
 
 function scoreReset() {
-  player1[1] = 0;
-  player2[1] = 0;
+  player1.score = 0;
+  player2.score = 0;
 }
 
 function checkWinner(score1, score2) {
@@ -134,6 +146,7 @@ function clearDice() {
 function check456(roll, currentPlayer) {
   if (roll[0] === 4 && roll[1] === 5 && roll[2] === 6) {
     //player wins
+    highlightNum([4, 5, 6]);
     console.log(currentPlayer + " Automatic win!");
     banner.textContent = currentPlayer + " Automatic win!";
     scoreBanner.textContent = currentPlayer + " Wins!";
@@ -172,6 +185,7 @@ function reroll(roll, player) {
 function checkScore(roll, player) {
   if (roll[0] === roll[1] && roll[1] === roll[2]) {
     //player scores triple
+    highlightNum([]);
     console.log(player + " has triple " + roll[0] + "s");
     scoreBanner.textContent = player + " rolled triple " + roll[0] + "s";
     showScore(roll[0], true);

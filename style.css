@@ -142,9 +142,9 @@ h2 {
 }
 
 .highlightedDie {
-  box-shadow: 0px 0px 10px red;
-  border: solid red 3px;
-  background-color: red;
+  box-shadow: 1px 1px 15px blue;
+  /* border: solid white 0px; */
+  /* background-color: red; */
   border-radius: 25px;
 }
 
